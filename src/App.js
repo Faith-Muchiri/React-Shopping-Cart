@@ -1,10 +1,23 @@
-import './App.css';
+import  {Routes, Route} from "react-router-dom";
+import { Container } from "react-bootstrap"
+import Home from "./pages/Home";
+import About from "./pages/About";
+import Products from "./pages/Products";
+import Navbar from "./components/Navbar";
 
 function App() {
   return (
-    <div className="App">
-      <h1>Shopping Cart</h1>
-    </div>
+    <>
+      <Navbar/>
+      <Container className='mb-4'>
+        <Routes>
+          <Route path="/" element={<Home/>} />
+          <Route path="/about" element={<About/>} />
+          <Route path="/products" element={<Products/>} />        
+        </Routes>
+      </Container>
+    </>
+
   );
 }
 
